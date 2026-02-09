@@ -55,5 +55,9 @@ Happy playing! 🎼
 
 ### Option B: MIDI Files
 1.  Download a `.mid` file and place it in the `midi/` folder.
-2.  Run `python pyMIDI.py`.
-3.  Follow the instructions to convert it.
+2.  Run the MIDI converter:
+    ```bash
+    python pyMIDI.py
+    ```
+3.  The script will list found MIDI files. **Type the number** of the file you want to play and press **Enter**.
+4.  Once converted, press **F8** in the player to load it, then **DELETE** to play.
