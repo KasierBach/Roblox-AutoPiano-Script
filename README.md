@@ -39,7 +39,7 @@ Happy playing! 🎼
 | :--- | :--- | :--- |
 | **DELETE** | **Play / Pause** | Starts or stops the script. |
 | **F8** | **Reload Song** | Reloads `song.txt` without restarting the script. |
-| **F7** | **Set Speed 0.75x** | Quickly sets playback speed to 0.75. |
+| **F7** | **Cycle Speed** | Cycles speed: 0.25 -> 0.5 -> 0.75 -> 1.0 |
 | **PAGE UP** | **Speed Up** | Increases playback speed by 10%. |
 | **PAGE DOWN** | **Slow Down** | Decreases playback speed by 10%. |
 | **HOME** | **Rewind** | Jumps back 10 notes. |

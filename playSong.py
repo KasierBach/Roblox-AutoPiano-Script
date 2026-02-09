@@ -77,10 +77,22 @@ def speedUp(event):
     playback_speed *= speedMultiplier
     print(f"Speeding up: Playback speed is now {playback_speed:.2f}x")
 
-def setSpeed075(event):
+def cycleSpeed(event):
     global playback_speed
-    playback_speed = 0.75
-    print(f"Speed set to {playback_speed:.2f}x")
+    speeds = [0.25, 0.5, 0.75, 1.0]
+    
+    # Find closest current speed index
+    closest_speed = min(speeds, key=lambda x: abs(x - playback_speed))
+    try:
+        current_index = speeds.index(closest_speed)
+    except ValueError:
+        current_index = 2 # Default to 0.75 if no match
+    
+    # Cycle to next speed
+    next_index = (current_index + 1) % len(speeds)
+    playback_speed = speeds[next_index]
+    
+    print(f"Speed cycled to {playback_speed:.2f}x")
 
 def slowDown(event):
     global playback_speed
@@ -305,7 +317,7 @@ def onKeyPress(key):
         elif key == Key.f8:
             loadSong()
         elif key == Key.f7:
-            setSpeed075(None)
+            cycleSpeed(None)
         elif key == Key.esc:
             return False
     except AttributeError:
@@ -322,7 +334,7 @@ def printControls():
         ("INSERT", "Toggle Legit Mode"),
         ("F5", "Load New Song (NOT RECOMMENDED)"),
         ("F8", "Reload Current Song"),
-        ("F7", "Set Speed to 0.75x"),
+        ("F7", "Cycle Speed (0.25 -> 1.0)"),
         ("ESC", "Exit")
     ]
 
